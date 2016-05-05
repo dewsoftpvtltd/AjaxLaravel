@@ -9,5 +9,7 @@ elixir(function(mix) {
                 'jquery/dist/jquery.min.js',
                 'bootstrap-sass/assets/javascripts/bootstrap.min.js'
                 ],'public/js/3rd-party.js', 'bower_components');
-});
 
+
+    mix.scriptsIn('', 'public/js/app.js');
+});
