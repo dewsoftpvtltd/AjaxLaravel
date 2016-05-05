@@ -16,8 +16,10 @@
                 <li>{!! link_to_route('authors.index', 'Authors') !!}</li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-            <li id="weather" class="navbar-text">Loading weather...</li>
-        </ul>
+<li class="navbar-text">
+    Lahore {{ $weather->temp }} C.
+    Last update {{ $weather->updated_at }}
+</li>        </ul>
 
         </div>
     </div>
