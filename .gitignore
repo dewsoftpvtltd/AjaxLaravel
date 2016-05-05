@@ -9,3 +9,4 @@ Homestead.json
 .env
  
 "/bower_components" 
+'dump.rdb' 
