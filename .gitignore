@@ -10,3 +10,5 @@ Homestead.json
  
 "/bower_components" 
 'dump.rdb' 
+
+tests/_output/*

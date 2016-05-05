@@ -47,10 +47,10 @@ return [
     'connections' => [
 
         'sqlite' => [
-            'driver' => 'sqlite',
-            'database' => env('DB_DATABASE', database_path('database.sqlite')),
-            'prefix' => '',
-        ],
+            'driver'   => 'sqlite',
+            'database' => database_path(env('SQLITE_FILE', 'database.sqlite')),
+            'prefix'   => '',
+],
 
         'mysql' => [
             'driver' => 'mysql',
