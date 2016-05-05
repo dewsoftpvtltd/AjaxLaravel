@@ -19,7 +19,7 @@
             <tr>
                 <td>{!! link_to_route('articles.edit', 'Edit', $article->id, ['class' => 'btn btn-default']) !!}</td>
                 <td>
-                    {!! Form::open(['method' => 'DELETE', 'route' => ['articles.destroy', $article->id]]) !!}
+                    {!! Form::open(['method' => 'DELETE', 'route' => ['articles.destroy', $article->id], 'onsubmit' => 'return ConfirmDelete()']) !!}
                         <button type="submit" class="btn btn-warning">Delete</button>
                     {!! Form::close() !!}
                 </td>
