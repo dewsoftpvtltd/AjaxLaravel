@@ -7,10 +7,11 @@
     {!! link_to_route('articles.create', 'New Article', null, [
         'class' => 'btn btn-primary btn-lg',
         'data-remote' => 'true' ]) !!}
-    <table class="table">
+        <table class="table">
         <tr>
             <th>Edit</th>
             <th>Delete</th>
+            <th>Recommend</th>
             <th>Title</th>
             <th>Author</th>
         </tr>
@@ -22,9 +23,11 @@
                         <button type="submit" class="btn btn-warning">Delete</button>
                     {!! Form::close() !!}
                 </td>
+                <td>{!! link_to_route('articles.recommendations.create', 'Recommend', $article->id) !!}</td>
                 <td>{!! link_to_route('articles.show', $article->title, $article->id) !!}</td>
                 <td>{!! $article->author->name !!}</td>
             </tr>
         @endforeach
     </table>
+
 @endsection
