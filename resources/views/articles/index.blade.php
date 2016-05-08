@@ -19,9 +19,15 @@
             <tr>
                 <td>{!! link_to_route('articles.edit', 'Edit', $article->id, ['class' => 'btn btn-default']) !!}</td>
                 <td>
-                    {!! Form::open(['method' => 'DELETE', 'route' => ['articles.destroy', $article->id], 'onsubmit' => 'return ConfirmDelete()']) !!}
-                        <button type="submit" class="btn btn-warning">Delete</button>
-                    {!! Form::close() !!}
+                    <form id="myform" class="delete-aricle col-md-12" method="POST" action="{{route('articles.destroy', ['article'=>$article->id]) }}">
+                <input type="hidden" name="_method" value="delete">                    
+                    {{ csrf_field() }}                            
+                    <div class="form-group">
+                        <button type="submit" data-aricle-id="{{$article->id}}"
+                        class="submitdel btn btn-warning"
+                        >Delete</button>
+                    </div>                    
+            </form>
                 </td>
                 <td>{!! link_to_route('articles.recommendations.create', 'Recommend', $article->id) !!}</td>
                 <td>{!! link_to_route('articles.show', $article->title, $article->id) !!}</td>
